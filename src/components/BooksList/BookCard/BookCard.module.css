@@ -1,0 +1,30 @@
+.cardBack{
+    cursor: pointer;
+    overflow: hidden;
+    padding: 20px 10px 10px 10px;
+    display: grid;
+    grid-template-rows: 235px minmax(20px, auto) minmax(20px, auto) auto;
+    background-color: gray;
+    width: 250px;
+}
+.imageWrapper{
+    justify-self: center;
+}
+.image{
+    transition: all ease 0.5s;
+    max-width: 170px;
+    height: 220px;
+}
+.title{
+    overflow: hidden;
+}
+.authors{
+    font-size: 12px;
+}
+.categories{
+    text-decoration: underline;
+    font-size: 12px;
+}
+.cardBack:hover .image{
+    transform: rotate(5deg) scale(1.05);
+}
