@@ -1,15 +1,24 @@
 import React from 'react';
 import styles from './Header.module.css'
 import searchIcon from '../../images/Search-icon.svg'
-import {getBooksList} from "../../state/rootReducer"
-import {useDispatch} from "react-redux"
+import {getBooksList, setLoading} from "../../state/rootReducer"
+import {useDispatch, useSelector} from "react-redux"
+import {useHistory} from "react-router-dom"
 
 const Header = () => {
+  const hasError = useSelector(state => state.hasError)
   const dispatch = useDispatch()
+  const history = useHistory()
   const categoriesList = ["all", "art", "biography", "computers", "history", "medical", "poetry"]
   const [searchText, setSearchText] = React.useState('')
   const [category, setCategory] = React.useState('all')
   const [sortBy, setSortBy] = React.useState('relevance')
+
+  const searchInputClass = () =>{
+    if (hasError) return `${styles.searchInput} ${styles.errorInput}`
+
+    return styles.searchInput
+  }
 
   const textChangeHandler = e =>{
     setSearchText(e.target.value)
@@ -23,14 +32,15 @@ const Header = () => {
 
   const submitHandler = e =>{
     e.preventDefault()
-    dispatch(getBooksList(searchText,sortBy))
+    dispatch(getBooksList(searchText,sortBy,category))
+    if(searchText) history.push('/search')
   }
 
   return (
       <form className={styles.header} onSubmit={submitHandler}>
         <span className={styles.title}>Search for books</span>
         <div className={styles.searchWrapper}>
-          <input name="search" type="text" className={styles.searchInput} value={searchText}
+          <input name="search" type="text" className={searchInputClass()} value={searchText}
                  onChange={textChangeHandler}/>
           <button type="submit" className={styles.searchButton}>
             <img className={styles.searchIcon} src={searchIcon} alt=''/>
