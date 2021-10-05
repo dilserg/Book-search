@@ -1,71 +1,81 @@
-.header{
-    color: white;
-    background-image: url('../../images/books-background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    padding: 30px 0 20px 0;
-    display: grid;
-    gap: 20px;
-    justify-items: center;
-    grid-template-columns: 1fr 1fr;
+.header {
+  color: white;
+  background-image: url('../../images/books-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 30px 0 20px 0;
+  display: grid;
+  gap: 20px;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
 }
-.title{
-    grid-column: 1/3;
-    font-size: 42px;
-    font-weight: bold;
+.title {
+  grid-column: 1/3;
+  font-size: 42px;
+  font-weight: bold;
 }
-.errorInput{
-    border: 3px solid red;
+.errorInput {
+  border: 3px solid red;
 }
-.searchInput:focus{
-    outline: none;
+.searchInput:focus {
+  outline: none;
 }
-.searchInput{
-    position: relative;
-    left: 16px;
-    width: 550px;
-    height: 32px;
-    font-size: 24px;
+.searchInput {
+  position: relative;
+  left: 16px;
+  width: 550px;
+  height: 32px;
+  font-size: 24px;
 }
-.searchWrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-column: 1/3;
+.searchWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1/3;
 }
-.searchButton{
-    position: relative;
-    left: -16px;
-    top: 2px;
-    border: none;
-    background-color: white;
-    cursor: pointer;
+.searchButton {
+  position: relative;
+  left: -16px;
+  top: 2px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
 }
-.searchIcon{
-    width: 22px;
+.searchIcon {
+  width: 22px;
 }
-.select{
-    font-size: 16px;
-    height: 27px;
-    padding-left: 5px;
-    width: 200px;
+.select {
+  font-size: 16px;
+  height: 27px;
+  padding-left: 5px;
+  width: 200px;
 }
-.selectLabel{
-    margin-right: 5px;
+.selectLabel {
+  margin-right: 5px;
 }
-.selectWrapperEnd{
-    justify-self: end;
+.selectWrapperEnd {
+  justify-self: end;
 }
-.selectWrapperStart{
-    justify-self: start;
+.selectWrapperStart {
+  justify-self: start;
 }
 
-@media screen and (max-width: 620px){
-    .searchInput{
-        width: 300px;
-    }
-    .select{
-        width: 100px;
-    }
+@media screen and (max-width: 620px) {
+  .header {
+    width: 100vw;
+  }
+  .title {
+    font-size: 30px;
+  }
+  .searchInput {
+    width: 300px;
+  }
+  .selectLabel {
+    font-size: 12px;
+  }
+  .select {
+    font-size: 12px;
+    width: 80px;
+  }
 }

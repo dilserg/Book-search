@@ -1,80 +1,104 @@
-.bookPage{
-    padding: 30px;
-    gap: 30px;
-    display: grid;
-    grid-template-columns: 260px auto auto;
-    grid-template-areas: 'image categories categories'
-                         'image title title'
-                         'image authors publishedDate'
-                         'image rating rating'
-                         'image description description'
-                         'buyLink amount amount'
-;
+.bookPage {
+  padding: 30px;
+  gap: 30px;
+  display: grid;
+  align-content: center;
+  grid-template-columns: 260px auto auto;
+  grid-template-areas:
+    'image categories categories'
+    'image title title'
+    'image authors publishedDate'
+    'image rating rating'
+    'image description description'
+    'buyLink amount amount';
 }
-.title{
-    font-size: 25px;
-    grid-area: title;
+.title {
+  font-size: 25px;
+  grid-area: title;
 }
-.authors{
-    font-size: 14px;
-    grid-area: authors;
+.authors {
+  font-size: 14px;
+  grid-area: authors;
 }
-.categories{
-    font-size: 14px;
-    grid-area: categories;
+.categories {
+  font-size: 14px;
+  grid-area: categories;
 }
-.publishedDate{
-    justify-self: end;
-    font-size: 14px;
-    grid-area: publishedDate;
+.publishedDate {
+  justify-self: end;
+  font-size: 14px;
+  grid-area: publishedDate;
 }
-.description{
-    grid-area: description;
+.description {
+  grid-area: description;
 }
-.rating{
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-    grid-area: rating;
+.rating {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  grid-area: rating;
 }
-.rating div{
-    display: flex;
-    align-items: center;
+.rating div {
+  display: flex;
+  align-items: center;
 }
 
-.imageWrapper{
-    grid-area: image;
+.imageWrapper {
+  grid-area: image;
 }
-.image{
-    max-width: 260px;
-    height: 400px;
+.image {
+  max-width: 260px;
+  height: 400px;
 }
-.amount{
-    grid-area: amount;
+.amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: amount;
 }
-.buyLink{
-    align-self: center;
-    justify-self: center;
-    font-size: 25px;
-    text-align: center;
-    border: 1px solid black;
-    background-color: maroon;
-    border-radius: 10px;
-    height: 30px;
-    width: 60px;
-    grid-area: buyLink;
+.buyLink {
+  align-self: center;
+  justify-self: center;
+  font-size: 25px;
+  text-align: center;
+  border: 1px solid black;
+  background-color: maroon;
+  border-radius: 10px;
+  height: 30px;
+  width: 60px;
+  grid-area: buyLink;
 }
-.buyLink a{
-    text-decoration: none;
-    color: white;
+.buyLink a {
+  text-decoration: none;
+  color: white;
 }
-.starImage{
-    height: 20px;
+.starImage {
+  height: 20px;
 }
-.noSale{
-    line-height: 30px;
-    background-color: lightgrey;
+.noSale {
+  line-height: 30px;
+  background-color: lightgrey;
+  font-size: 18px;
+  color: black;
+  width: 100px;
+}
+@media screen and (max-width: 620px) {
+  .image {
+    height: 200px;
+    max-width: 130px;
+  }
+  .title {
     font-size: 18px;
-    color: black;
-    width: 100px;
+  }
+  .bookPage {
+    grid-template-columns: 130px auto;
+    font-size: 12px;
+    grid-template-areas:
+      'image categories'
+      'image authors'
+      'image title'
+      'publishedDate rating'
+      'description description '
+      'buyLink amount';
+  }
 }
